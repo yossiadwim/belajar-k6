@@ -1,5 +1,5 @@
 import { check } from "k6";
-import { loginUser } from "../helper/user.js";
+import { login } from "../helper/users.js";
 
 export const options = {
   stages: [
@@ -16,7 +16,7 @@ export default function () {
     expiresInMins: 30,
   };
 
-  const loginResponse = loginUser(loginRequest);
+  const loginResponse = login(loginRequest);
 
   check(loginResponse, {
     "is status login response 200": (response) => response.status === 200,

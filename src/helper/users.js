@@ -14,7 +14,7 @@ export function registerUser(body) {
   return registerResponse
 }
 
-export function loginUser(body) {
+export function login(body) {
   const loginResponse = http.post(
     "https://dummyjson.com/user/login",
     JSON.stringify(body),
